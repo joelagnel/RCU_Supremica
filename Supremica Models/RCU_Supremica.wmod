@@ -344,7 +344,7 @@
 <SimpleIdentifier Name=":accepting"/>
 </EventList>
 <PointGeometry>
-<Point X="159" Y="327"/>
+<Point X="608" Y="672"/>
 </PointGeometry>
 <LabelGeometry Anchor="NW">
 <Point X="5" Y="5"/>
@@ -355,7 +355,7 @@
 <SimpleIdentifier Name=":accepting"/>
 </EventList>
 <PointGeometry>
-<Point X="292" Y="290"/>
+<Point X="800" Y="512"/>
 </PointGeometry>
 <LabelGeometry Anchor="NW">
 <Point X="5" Y="5"/>
@@ -366,7 +366,7 @@
 <SimpleIdentifier Name=":accepting"/>
 </EventList>
 <PointGeometry>
-<Point X="326" Y="157"/>
+<Point X="928" Y="432"/>
 </PointGeometry>
 <LabelGeometry Anchor="NW">
 <Point X="47" Y="6"/>
@@ -377,7 +377,7 @@
 <SimpleIdentifier Name=":accepting"/>
 </EventList>
 <PointGeometry>
-<Point X="63" Y="228"/>
+<Point X="416" Y="509"/>
 </PointGeometry>
 <LabelGeometry Anchor="NW">
 <Point X="-22" Y="-11"/>
@@ -388,7 +388,7 @@
 <SimpleIdentifier Name=":accepting"/>
 </EventList>
 <PointGeometry>
-<Point X="96" Y="98"/>
+<Point X="416" Y="352"/>
 </PointGeometry>
 <LabelGeometry Anchor="NW">
 <Point X="5" Y="5"/>
@@ -399,7 +399,7 @@
 <SimpleIdentifier Name=":accepting"/>
 </EventList>
 <PointGeometry>
-<Point X="226" Y="63"/>
+<Point X="624" Y="272"/>
 </PointGeometry>
 <LabelGeometry Anchor="NW">
 <Point X="5" Y="5"/>
@@ -415,7 +415,7 @@
 </LabelGeometry>
 </LabelBlock>
 <SplineGeometry>
-<Point X="76" Y="161"/>
+<Point X="362" Y="422"/>
 </SplineGeometry>
 </Edge>
 <Edge Source="idle.idle.kernel_mode.kernel_mode.rcu_in_eqs.user_mode" Target="IRQ_or_NMI.idle.IRQ_or_NMI.kernel_mode.rcu_is_watching.IRQ_or_NMI">
@@ -427,7 +427,7 @@
 </LabelGeometry>
 </LabelBlock>
 <SplineGeometry>
-<Point X="108" Y="280"/>
+<Point X="441" Y="606"/>
 </SplineGeometry>
 </Edge>
 <Edge Source="idle.kernel_mode.kernel_mode.kernel_mode.rcu_is_watching.user_mode" Target="idle.idle.kernel_mode.kernel_mode.rcu_in_eqs.user_mode">
@@ -438,7 +438,7 @@
 </LabelGeometry>
 </LabelBlock>
 <SplineGeometry>
-<Point X="55" Y="156"/>
+<Point X="288" Y="354"/>
 </SplineGeometry>
 </Edge>
 <Edge Source="idle.kernel_mode.kernel_mode.kernel_mode.rcu_is_watching.user_mode" Target="idle.kernel_mode.kernel_mode.user_mode.rcu_in_eqs.user_mode">
@@ -449,7 +449,7 @@
 </LabelGeometry>
 </LabelBlock>
 <SplineGeometry>
-<Point X="159" Y="76"/>
+<Point X="486" Y="263"/>
 </SplineGeometry>
 </Edge>
 <Edge Source="idle.kernel_mode.kernel_mode.user_mode.rcu_in_eqs.user_mode" Target="idle.kernel_mode.kernel_mode.kernel_mode.rcu_is_watching.user_mode">
@@ -460,7 +460,7 @@
 </LabelGeometry>
 </LabelBlock>
 <SplineGeometry>
-<Point X="154" Y="56"/>
+<Point X="466" Y="168"/>
 </SplineGeometry>
 </Edge>
 <Edge Source="idle.kernel_mode.kernel_mode.user_mode.rcu_in_eqs.user_mode" Target="IRQ_or_NMI.kernel_mode.IRQ_or_NMI.user_mode.rcu_is_watching.IRQ_or_NMI">
@@ -472,7 +472,7 @@
 </LabelGeometry>
 </LabelBlock>
 <SplineGeometry>
-<Point X="278" Y="107"/>
+<Point X="777" Y="195"/>
 </SplineGeometry>
 </Edge>
 <Edge Source="IRQ_or_NMI.idle.IRQ_or_NMI.kernel_mode.rcu_is_watching.IRQ_or_NMI" Target="idle.idle.kernel_mode.kernel_mode.rcu_in_eqs.user_mode">
@@ -484,7 +484,7 @@
 </LabelGeometry>
 </LabelBlock>
 <SplineGeometry>
-<Point X="93" Y="294"/>
+<Point X="377" Y="710"/>
 </SplineGeometry>
 </Edge>
 <Edge Source="IRQ_or_NMI.idle.IRQ_or_NMI.kernel_mode.rcu_is_watching.IRQ_or_NMI" Target="IRQ_or_NMI.idle.IRQ_or_NMI.kernel_mode.rcu_is_watching.IRQ_or_NMI">
@@ -498,7 +498,7 @@
 </LabelGeometry>
 </LabelBlock>
 <SplineGeometry>
-<Point X="143" Y="385"/>
+<Point X="592" Y="730"/>
 </SplineGeometry>
 </Edge>
 <Edge Source="IRQ_or_NMI.idle.IRQ_or_NMI.kernel_mode.rcu_is_watching.IRQ_or_NMI" Target="IRQ_or_NMI.idle.IRQ_or_NMI.user_mode.rcu_in_eqs.IRQ_or_NMI">
@@ -509,7 +509,7 @@
 </LabelGeometry>
 </LabelBlock>
 <SplineGeometry>
-<Point X="232" Y="332"/>
+<Point X="890" Y="638"/>
 </SplineGeometry>
 </Edge>
 <Edge Source="IRQ_or_NMI.idle.IRQ_or_NMI.user_mode.rcu_in_eqs.IRQ_or_NMI" Target="IRQ_or_NMI.idle.IRQ_or_NMI.kernel_mode.rcu_is_watching.IRQ_or_NMI">
@@ -520,7 +520,7 @@
 </LabelGeometry>
 </LabelBlock>
 <SplineGeometry>
-<Point X="226" Y="312"/>
+<Point X="778" Y="620"/>
 </SplineGeometry>
 </Edge>
 <Edge Source="IRQ_or_NMI.idle.IRQ_or_NMI.user_mode.rcu_in_eqs.IRQ_or_NMI" Target="IRQ_or_NMI.kernel_mode.IRQ_or_NMI.user_mode.rcu_is_watching.IRQ_or_NMI">
@@ -531,7 +531,7 @@
 </LabelGeometry>
 </LabelBlock>
 <SplineGeometry>
-<Point X="332" Y="230"/>
+<Point X="865" Y="480"/>
 </SplineGeometry>
 </Edge>
 <Edge Source="IRQ_or_NMI.kernel_mode.IRQ_or_NMI.user_mode.rcu_is_watching.IRQ_or_NMI" Target="idle.kernel_mode.kernel_mode.user_mode.rcu_in_eqs.user_mode">
@@ -543,7 +543,7 @@
 </LabelGeometry>
 </LabelBlock>
 <SplineGeometry>
-<Point X="293" Y="92"/>
+<Point X="808" Y="141"/>
 </SplineGeometry>
 </Edge>
 <Edge Source="IRQ_or_NMI.kernel_mode.IRQ_or_NMI.user_mode.rcu_is_watching.IRQ_or_NMI" Target="IRQ_or_NMI.idle.IRQ_or_NMI.user_mode.rcu_in_eqs.IRQ_or_NMI">
@@ -554,7 +554,7 @@
 </LabelGeometry>
 </LabelBlock>
 <SplineGeometry>
-<Point X="312" Y="224"/>
+<Point X="793" Y="417"/>
 </SplineGeometry>
 </Edge>
 <Edge Source="IRQ_or_NMI.kernel_mode.IRQ_or_NMI.user_mode.rcu_is_watching.IRQ_or_NMI" Target="IRQ_or_NMI.kernel_mode.IRQ_or_NMI.user_mode.rcu_is_watching.IRQ_or_NMI">
@@ -568,7 +568,7 @@
 </LabelGeometry>
 </LabelBlock>
 <SplineGeometry>
-<Point X="384" Y="140"/>
+<Point X="1072" Y="452"/>
 </SplineGeometry>
 </Edge>
 </EdgeList>
