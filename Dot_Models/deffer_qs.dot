@@ -1,0 +1,34 @@
+digraph state_automaton {
+	center = true;
+	// size = "700,800";
+	nodesep = 0.5;
+	{node [shape = plaintext, style=invis, label=""] "__init_all_enabled"};
+	node [shape = ellipse, fontsize=10, color = green3];
+	edge [fontsize=10];
+
+	"__init_all_enabled" -> "all_enabled";
+	"all_enabled" [label = "all_enabled"]; 
+	"read_locked" [label = "read_locked"]; 
+	"read_locked_special" [label = "read_locked_special"]; 
+	"read_locked_special_atomic" [label = "read_locked_special_atomic"]; 
+	"read_unlock_qs_deferred" [label = "read_unlock_qs_deferred"]; 
+
+	"all_enabled" -> "all_enabled" [ label = "report_qs" ];
+	"all_enabled" -> "read_locked" [ label = "read_lock_outer" ];
+
+	"read_locked" -> "read_locked_special" [ label = "tick_set_urgent" ];
+	"read_locked" -> "read_locked_special" [ label = "context_switch" ];
+	"read_locked" -> "read_locked_special" [ label = "expedited_ipi" ];
+
+	"read_locked_special" -> "read_locked_special_atomic" [ label = "atomic_enter" ];
+	"read_locked_special_atomic" -> "read_locked_special" [ label = "atomic_exit" ];
+
+	"read_locked_special_atomic" -> "read_unlock_qs_deferred" [ label = "read_unlock_outer_special" ];
+
+	"read_unlock_qs_deferred" -> "all_enabled" [ label = "atomic_exit" ];
+
+	{ rank = min ;
+		"__init_all_enabled";
+		"all_enabled";
+	}
+}
