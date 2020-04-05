@@ -7,6 +7,8 @@ digraph state_automaton {
 	edge [fontsize=10];
 
 	"__init_all_enabled" -> "all_enabled";
+
+	/* Handling for read-lock, pirq dis, read-unlock, pirq en */
 	"all_enabled" [label = "all_enabled"]; 
 	"read_locked" [label = "read_locked"]; 
 	"read_locked_special" [label = "read_locked_special"]; 
@@ -16,9 +18,12 @@ digraph state_automaton {
 	"all_enabled" -> "all_enabled" [ label = "report_qs" ];
 	"all_enabled" -> "read_locked" [ label = "read_lock_outer" ];
 
-	"read_locked" -> "read_locked_special" [ label = "tick_set_urgent" ];
+	"read_locked" -> "all_enabled" [ label = "rcu_read_unlock" ];
+	"read_locked" -> "read_locked_special" [ label = "tick_urgent" ];
 	"read_locked" -> "read_locked_special" [ label = "context_switch" ];
 	"read_locked" -> "read_locked_special" [ label = "expedited_ipi" ];
+
+	"read_locked_special" -> "all_enabled" [ label = "rcu_read_unlock" ];
 
 	"read_locked_special" -> "read_locked_special_atomic" [ label = "atomic_enter" ];
 	"read_locked_special_atomic" -> "read_locked_special" [ label = "atomic_exit" ];
