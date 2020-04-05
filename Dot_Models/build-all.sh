@@ -1,6 +1,6 @@
 #!/bin/bash
 
-git rm -rf out
+rm -rf out
 mkdir out
 
 for f in $(ls *.dot); do
