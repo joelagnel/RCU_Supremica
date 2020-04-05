@@ -27,7 +27,7 @@ digraph state_automaton {
 
 
 	{ rank = min ;
-		"__init_atomic";
-		"atomic";
+		"__init_not_atomic";
+		"not_atomic";
 	}
 }
