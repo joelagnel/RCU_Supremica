@@ -1,6 +1,4 @@
 #!/bin/bash
-set -x
-
 rm -rf out
 mkdir out
 
