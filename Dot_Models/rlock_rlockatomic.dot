@@ -2,7 +2,7 @@ digraph state_automaton {
 	center = true;
 	// size = "700,800";
 	nodesep = 0.5;
-	// {node [shape = plaintext, style=invis, label=""] "__init_read_locked"};
+	{node [shape = plaintext, style=invis, label=""] "__init_read_locked"};
 	node [shape = ellipse, fontsize=10, color = green3];
 	edge [fontsize=10];
 
