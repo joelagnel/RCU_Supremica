@@ -27,8 +27,9 @@ digraph state_automaton {
 	"atomic" -> "not_atomic" [ label = "atomic_exit" ];
 	"not_atomic" -> "atomic" [ label = "atomic_enter" ];
 
-	"read_locked_special_atomic" -> "read_unlock_qs_deferred" [ label = "read_unlock_outer_special" ];
-	"read_unlock_qs_deferred" -> "not_atomic" [ label = "atomic_exit" ];
+	// These are not needed as they're already modeled by defer_rlock_atomic_runlock.dot
+	// "read_locked_special_atomic" -> "read_unlock_qs_deferred" [ label = "read_unlock_outer_special" ];
+	// "read_unlock_qs_deferred" -> "not_atomic" [ label = "atomic_exit" ];
 /*
 	{ rank = min ;
 		"__init_not_atomic";
