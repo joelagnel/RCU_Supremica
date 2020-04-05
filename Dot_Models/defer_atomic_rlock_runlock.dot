@@ -6,7 +6,7 @@ digraph state_automaton {
 	node [shape = ellipse, fontsize=10, color = green3];
 	edge [fontsize=10];
 
-	"__init_atomic" -> "atomic";
+	"__init_atomic" -> "not_atomic";
 
 	/* Handling for pirq dis, read-lock, read-unlock, pirq en */
 	"atomic" [label = "atomic"];
@@ -17,6 +17,14 @@ digraph state_automaton {
 	 * everything remains same as defer_rlock_atomic_runlock.dot */
 	"read_locked_atomic" -> "read_locked_special_atomic" [ label = "tick_urgent" ];
 	"read_locked_atomic" -> "read_locked_special_atomic" [ label = "expedited_ipi" ];
+
+        "read_locked_special" -> "read_locked_special_atomic" [ label = "atomic_enter" ];
+        "read_locked_special_atomic" -> "read_locked_special" [ label = "atomic_exit" ];
+
+	"read_locked_special" -> "not_atomic" [ label = "read_unlock_outer_special" ];
+	"atomic" -> "not_atomic" [ label = "atomic_exit" ];
+	"not_atomic" -> "atomic" [ label = "atomic_enter" ];
+
 
 	{ rank = min ;
 		"__init_atomic";
