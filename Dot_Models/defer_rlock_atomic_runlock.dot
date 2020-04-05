@@ -18,12 +18,12 @@ digraph state_automaton {
 	"not_atomic" -> "not_atomic" [ label = "report_qs" ];
 	"not_atomic" -> "read_locked" [ label = "read_lock_outer" ];
 
-	"read_locked" -> "not_atomic" [ label = "rcu_read_unlock" ];
+	"read_locked" -> "not_atomic" [ label = "read_unlock_outer" ];
 	"read_locked" -> "read_locked_special" [ label = "tick_urgent" ];
 	"read_locked" -> "read_locked_special" [ label = "context_switch" ];
 	"read_locked" -> "read_locked_special" [ label = "expedited_ipi" ];
 
-	"read_locked_special" -> "not_atomic" [ label = "rcu_read_unlock" ];
+	"read_locked_special" -> "not_atomic" [ label = "read_unlock_outer_special" ];
 
 	"read_locked_special" -> "read_locked_special_atomic" [ label = "atomic_enter" ];
 	"read_locked_special_atomic" -> "read_locked_special" [ label = "atomic_exit" ];
