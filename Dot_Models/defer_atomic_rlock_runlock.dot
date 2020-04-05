@@ -2,11 +2,11 @@ digraph state_automaton {
 	center = true;
 	// size = "700,800";
 	nodesep = 0.5;
-	{node [shape = plaintext, style=invis, label=""] "__init_not_atomic"};
+	// {node [shape = plaintext, style=invis, label=""] "__init_not_atomic"};
 	node [shape = ellipse, fontsize=10, color = green3];
 	edge [fontsize=10];
 
-	"__init_not_atomic" -> "not_atomic";
+	// "__init_not_atomic" -> "not_atomic";
 
 	/* Handling for pirq dis, read-lock, read-unlock, pirq en */
 	"atomic" [label = "atomic"];
@@ -29,9 +29,10 @@ digraph state_automaton {
 
 	"read_locked_special_atomic" -> "read_unlock_qs_deferred" [ label = "read_unlock_outer_special" ];
 	"read_unlock_qs_deferred" -> "not_atomic" [ label = "atomic_exit" ];
-
+/*
 	{ rank = min ;
 		"__init_not_atomic";
 		"not_atomic";
 	}
+*/
 }
