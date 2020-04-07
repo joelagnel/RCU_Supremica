@@ -1,0 +1,22 @@
+digraph state_automaton {
+	center = true;
+	// size = "700,800";
+	nodesep = 0.5;
+	{node [shape = plaintext, style=invis, label=""] "__init_not_irq"};
+	node [shape = ellipse, fontsize=10, color = green3];
+	edge [fontsize=10];
+
+	"__init_not_irq" -> "not_irq";
+
+	/* Handling for pirq dis, read-lock, read-unlock, pirq en */
+	"irq" [label = "irq"]; 
+	"not_irq" [label = "not_irq"]; 
+
+	"irq" -> "not_irq" [ label = "irq_disable" ];
+	"not_irq" -> "irq" [ label = "irq_enable" ];
+
+	{ rank = min ;
+		"__init_not_irq";
+		"not_irq";
+	}
+}

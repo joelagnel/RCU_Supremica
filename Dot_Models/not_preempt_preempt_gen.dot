@@ -1,0 +1,22 @@
+digraph state_automaton {
+	center = true;
+	// size = "700,800";
+	nodesep = 0.5;
+	{node [shape = plaintext, style=invis, label=""] "__init_not_preempt"};
+	node [shape = ellipse, fontsize=10, color = green3];
+	edge [fontsize=10];
+
+	"__init_not_preempt" -> "not_preempt";
+
+	/* Handling for pirq dis, read-lock, read-unlock, pirq en */
+	"preempt" [label = "preempt"]; 
+	"not_preempt" [label = "not_preempt"]; 
+
+	"preempt" -> "not_preempt" [ label = "preempt_disable" ];
+	"not_preempt" -> "preempt" [ label = "preempt_enable" ];
+
+	{ rank = min ;
+		"__init_not_preempt";
+		"not_preempt";
+	}
+}
