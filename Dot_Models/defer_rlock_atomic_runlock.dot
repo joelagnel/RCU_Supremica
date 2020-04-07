@@ -15,7 +15,6 @@ digraph state_automaton {
 	"read_locked_special_atomic" [label = "read_locked_special_atomic"]; 
 	"read_unlock_qs_deferred" [label = "read_unlock_qs_deferred"]; 
 
-	"not_atomic" -> "not_atomic" [ label = "report_qs" ];
 	"not_atomic" -> "read_locked" [ label = "read_lock_outer" ];
 
 	"read_locked" -> "not_atomic" [ label = "read_unlock_outer" ];
