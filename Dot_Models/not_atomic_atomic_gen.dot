@@ -1,0 +1,29 @@
+digraph state_automaton {
+	center = true;
+	// size = "700,800";
+	nodesep = 0.5;
+	{node [shape = plaintext, style=invis, label=""] "__init_all_enabled"};
+	node [shape = ellipse, fontsize=10, color = green3];
+	edge [fontsize=10];
+
+	"__init_all_enabled" -> "all_enabled";
+
+	"all_disabled" [label = "all_disabled"]; 
+	"p_xor_i" [label = "p_xor_i"]; 
+
+	/* 
+	 * NOTE: The automata should generate a pseudo-event when entering
+	 * (called atomic_enter) or exiting (called atomic_exit) this state.
+	 */
+	"all_enabled" [label = "all_enabled", shape="square"]; 
+
+	"all_enabled" -> "p_xor_i" [ label = "preempt_disable" ];
+	"all_enabled" -> "p_xor_i" [ label = "irq_disable" ];
+	"p_xor_i" -> "all_disabled" [ label = "preempt_disable" ];
+	"p_xor_i" -> "all_disabled" [ label = "irq_disable" ];
+
+	{ rank = min ;
+		"__init_all_enabled";
+		"all_enabled";
+	}
+}
