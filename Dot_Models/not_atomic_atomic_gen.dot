@@ -19,8 +19,13 @@ digraph state_automaton {
 
 	"all_enabled" -> "p_xor_i" [ label = "preempt_disable" ];
 	"all_enabled" -> "p_xor_i" [ label = "irq_disable" ];
+	"p_xor_i" -> "all_enabled" [ label = "preempt_enable" ];
+	"p_xor_i" -> "all_enabled" [ label = "irq_enable" ];
+
 	"p_xor_i" -> "all_disabled" [ label = "preempt_disable" ];
 	"p_xor_i" -> "all_disabled" [ label = "irq_disable" ];
+	"all_disabled" -> "p_xor_i" [ label = "preempt_enable" ];
+	"all_disabled" -> "p_xor_i" [ label = "irq_enable" ];
 
 	{ rank = min ;
 		"__init_all_enabled";
